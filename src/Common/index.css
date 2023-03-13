@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@400;600;800&display=swap');
+
+html, body, * {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.3;
+  box-sizing: border-box;
+  font-family: 'Sono', sans-serif;
+}
+
+
+.admin-container {
+  width: 100%;
+  height: 100vh;
+  background: #ecf0f1;
+  position: relative;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+}
+
+.sidebar {
+  position: absolute;
+  inset: 0 0 0 0;
+  width: 380px;
+  margin-left: -380px;
+  background-color: #3c3c3d;
+  transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar.show {
+  margin-left: 0px;
+}
+.side-links {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.side-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s;
+}
+
+.side-content.show {
+  margin-left: 380px;
+}
+
+.side-content main {
+  flex-grow: 1;
+  padding: 20px;
+  overflow: auto;
+  box-shadow: 0 0 50px #00000038 inset;
+}
+
+.side-content footer {
+  padding: 15px;
+  background: #ffffff;
+}
+
+.side-content header {
+  padding: 15px;
+  background: #c99d66;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.search-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.search-con {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  font-size: 20px;
+  top: 19%;
+  left: 5%;
+}
+
+.search-con .search-input {
+  height: calc(100% - 4px);
+  width: 350px;
+  background: #ffffff87;
+  border: none;
+  border-radius: 20px;
+  margin: 2px 0;
+  padding-left: 50px;
+  padding-right: 15px;
+  transition: all 0.5s;
+}
+
+.search-con .search-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #0202022b;
+}
+
+.extra-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+.head-comon-ic {
+  height: 50px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.iin {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.crypto-card-1 {
+  display: flex;
+  gap: 15px;
+  flex-direction: row;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+.sidebar .crypto-card-1 {
+  background: #73624d;
+}
+.crypto-card-1 .content {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.ruppe-grow {
+  justify-content: space-between;
+  display: flex;
+}
+
+.import-info, .side-links, .logo-con {
+  padding: 20px;
+}
+
+.badge.bg-danger {
+  background-color: #ff00001a !important;
+  color: #fd1111;
+}
+
+
+.badge.bg-success {
+  background-color: #19875426 !important;
+    color: #12bb6d;
+}
+
+.logo-con h1 {
+  font-weight: 800;
+    color: #ffffff;
+    text-align: center;
+}
+
+.logo-con h1 span {
+  color: #c99d66;
+}
+
+.side-links .side-ul {
+  padding: 0;
+  list-style: none;
+}
+
+.side-links .side-ul li a {
+  display: block;
+  padding: 15px;
+  display: flex;
+  gap: 15px;
+  color: #ffffff;
+  font-size: 17px;
+}
+.side-links .side-ul li a:hover {
+  color: #c99d66;
+}
+
+.side-links .side-ul li a > span {
+  width: 20px;
+  height: 20px;
+}
