@@ -35,7 +35,7 @@ export const Sidebar = ({ show }) => {
                             <div className='ruppe-grow'>
                                 <h5>$48,789.50</h5>
                                 <div className='grow-box'>
-                                    <span class="badge rounded-pill bg-danger"><CgArrowDown />10%</span>
+                                    <span className="badge rounded-pill bg-danger"><CgArrowDown />10%</span>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +51,7 @@ export const Sidebar = ({ show }) => {
                             <div className='ruppe-grow'>
                                 <h5>$8,789.50</h5>
                                 <div className='grow-box'>
-                                    <span class="badge rounded-pill bg-success"><CgArrowUp />50%</span>
+                                    <span className="badge rounded-pill bg-success"><CgArrowUp />50%</span>
                                 </div>
                             </div>
                         </div>

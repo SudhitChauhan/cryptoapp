@@ -24,8 +24,8 @@ a {
 .sidebar {
   position: absolute;
   inset: 0 0 0 0;
-  width: 380px;
-  margin-left: -380px;
+  width: 320px;
+  margin-left: -320px;
   background-color: #3c3c3d;
   transition: all 0.5s;
   display: flex;
@@ -47,7 +47,7 @@ a {
 }
 
 .side-content.show {
-  margin-left: 380px;
+  margin-left: 320px;
 }
 
 .side-content main {
@@ -201,4 +201,76 @@ a {
 .side-links .side-ul li a > span {
   width: 20px;
   height: 20px;
+}
+
+.crypto-card-1 .icon .box {
+  font-size: 40px;
+  color: #e6d1b7;
+}
+
+.welcome-text {
+  letter-spacing: -1px;
+  font-weight: 600;
+  color: #7c7d7d;
+}
+.welcome-text small {
+  font-weight: 100;
+  font-size: 20px;
+}
+
+
+.common-card h5 {
+  font-weight: 100;
+  font-size: 20px;
+  color: #7c7d7d;
+  margin-bottom: 18px;
+}
+
+.crypto-card-2 .icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.crypto-card-2 {
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 20px;
+  min-width: 300px;
+}
+
+.crypto-card-2 .grow-box {
+  position: absolute;
+  z-index: 1;
+  right: 15px;
+  top: 13px;
+}
+
+.table-card {
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.tab-div .icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.tab-div {
+  align-items: center;
+  gap: 10px;
+}
+
+.coin-table {
+  vertical-align: baseline;
+}
+
+.coin-table th {
+  color: #7c7d7d;
+  font-weight: 100;
+}
+
+.coin-table td {
+  font-weight: 600;
 }
