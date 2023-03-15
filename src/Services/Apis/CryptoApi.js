@@ -2,6 +2,7 @@ import axios from "axios"
 import { CoinsAction } from "../Slices/Coins";
 import { GlobalStateAction } from "../Slices/GlobalState";
 import { NewsAction } from "../Slices/News";
+import { CoinDetailsAction } from "../Slices/CoinDetailSlice";
 
 
 
@@ -104,6 +105,37 @@ export const newsData = () => {
         }
         try {
             await newsRequest();
+        } catch (error) {
+            console.error(error);
+        }
+    }
+}
+
+
+/* --------------------------------------------------------------------------------
+                        Fetch Coin Details From Repidapi
+-------------------------------------------------------------------------------- */
+export const coinDetailData = ({ coinId }) => {
+    return async (dispatch) => {
+        const coinDetailRequest = async () => {
+            axios.request(
+                {
+                    method: 'GET',
+                    url: `https://coinranking1.p.rapidapi.com/coin/${coinId}`,
+                    params: {referenceCurrencyUuid: coinId, timePeriod: '24h'},
+                    headers: {
+                      'X-RapidAPI-Key': '646793bc93msh0a1f6f52bce9f9fp19c9b7jsn2262f92e3160',
+                      'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
+                    }
+                }
+            ).then(function (response) {
+                dispatch(CoinDetailsAction.setCoins(response.data));
+            }).catch(function (error) {
+                console.error(error);
+            });
+        }
+        try {
+            await coinDetailRequest();
         } catch (error) {
             console.error(error);
         }

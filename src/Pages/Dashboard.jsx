@@ -8,11 +8,13 @@ import { MdCurrencyExchange } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { BsBoxArrowRight } from "react-icons/bs";
 import { newsData } from '../Services/Apis/CryptoApi';
+import { NewsCard } from '../Components/NewsCard';
 
 export const Dashboard = () => {
 
   const globalState = useSelector(state => state.globalState);
   const coinsList = useSelector(state => state.coins.coins);
+  const newsList = useSelector(state => state.news.articles);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -106,7 +108,7 @@ export const Dashboard = () => {
                     </thead>
                     <tbody>
                       {
-                        coinsList.slice(0, 7).map((item) => (
+                        coinsList.slice(0, 9).map((item) => (
                           <tr key={item.uuid}>
                             {console.log(item)}
                             <td>{item.rank}</td>
@@ -138,10 +140,15 @@ export const Dashboard = () => {
         </div>
         <div className='col-3'>
           <div className='common-card'>
-            <h5>Latest Crypto News</h5>
-            <div className='card'>
-              <div className='card-header'>
-              </div>
+            <Link to="news/"><h5>Latest Crypto News</h5></Link>
+            <div className='dashboa row g-3'>
+              {
+                newsList ? newsList.slice(0, 2).map((item, index) => (
+                  <div className='col-12' key={index}>
+                    <NewsCard item={item} />
+                  </div>
+                )) : null
+              }
             </div>
           </div>
         </div>

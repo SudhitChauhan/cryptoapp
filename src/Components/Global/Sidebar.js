@@ -17,8 +17,8 @@ export const Sidebar = ({ show }) => {
             <div className='side-links'>
                 <ul className='side-ul'>
                     <li><Link to='/dashboard/' className='nav-link'><span><RxDashboard /></span><span>Dashboard</span></Link></li>
-                    <li><Link to='profile/' className='nav-link'><span><FaRegUser /></span><span>Profile</span></Link></li>
-                    <li><Link to='exchanges/' className='nav-link'><span><FaExchangeAlt /></span><span>Exchanges</span></Link></li>
+                    {/* <li><Link to='profile/' className='nav-link'><span><FaRegUser /></span><span>Profile</span></Link></li> */}
+                    {/* <li><Link to='exchanges/' className='nav-link'><span><FaExchangeAlt /></span><span>Exchanges</span></Link></li> */}
                     <li><Link to='cryptocurrencies/' className='nav-link'><span><BsCurrencyBitcoin /></span><span>Cryptocurrencies</span></Link></li>
                     <li><Link to='news/' className='nav-link'><span><BiNews /></span><span>News</span></Link></li>
                 </ul>

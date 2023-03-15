@@ -10,9 +10,9 @@ export const CoinCard = ({ item }) => {
             <div className='d-flex gap-3 mt-2'>
                 <div className='grow-box'>
                     {item.change[0] == "-" ? (
-                        <span class="badge rounded-pill bg-danger"><CgArrowDown />{item.change}%</span>
+                        <span className="badge rounded-pill bg-danger"><CgArrowDown />{item.change}%</span>
                     ) : (
-                        <span class="badge rounded-pill bg-success"><CgArrowUp />{`+${item.change}%`}</span>
+                        <span className="badge rounded-pill bg-success"><CgArrowUp />{`+${item.change}%`}</span>
                     )}
                 </div>
                 <div className='icon'>
