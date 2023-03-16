@@ -110,7 +110,6 @@ export const Dashboard = () => {
                       {
                         coinsList.slice(0, 9).map((item) => (
                           <tr key={item.uuid}>
-                            {console.log(item)}
                             <td>{item.rank}</td>
                             <td>
                               <div className='d-flex tab-div'>

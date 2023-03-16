@@ -3,6 +3,8 @@ import { CoinsAction } from "../Slices/Coins";
 import { GlobalStateAction } from "../Slices/GlobalState";
 import { NewsAction } from "../Slices/News";
 import { CoinDetailsAction } from "../Slices/CoinDetailSlice";
+import { ExchnageAction } from "../Slices/ExchangeSlice";
+import { MarketsAction } from "../Slices/MarketsSlice";
 
 
 
@@ -90,11 +92,11 @@ export const newsData = () => {
                     method: 'GET',
                     // url: 'https://bing-news-search1.p.rapidapi.com/news',
                     url: 'https://bing-news-search1.p.rapidapi.com/news/search?q="Cryptocurrency"',
-                    params: {safeSearch: 'Off', textFormat: 'Raw'},
+                    params: { safeSearch: 'Off', textFormat: 'Raw' },
                     headers: {
-                      'X-BingApis-SDK': 'true',
-                      'X-RapidAPI-Key': '646793bc93msh0a1f6f52bce9f9fp19c9b7jsn2262f92e3160',
-                      'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
+                        'X-BingApis-SDK': 'true',
+                        'X-RapidAPI-Key': '646793bc93msh0a1f6f52bce9f9fp19c9b7jsn2262f92e3160',
+                        'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
                     }
                 }
             ).then(function (response) {
@@ -122,10 +124,10 @@ export const coinDetailData = ({ coinId }) => {
                 {
                     method: 'GET',
                     url: `https://coinranking1.p.rapidapi.com/coin/${coinId}`,
-                    params: {referenceCurrencyUuid: coinId, timePeriod: '24h'},
+                    params: { referenceCurrencyUuid: coinId, timePeriod: '24h' },
                     headers: {
-                      'X-RapidAPI-Key': '646793bc93msh0a1f6f52bce9f9fp19c9b7jsn2262f92e3160',
-                      'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
+                        'X-RapidAPI-Key': '646793bc93msh0a1f6f52bce9f9fp19c9b7jsn2262f92e3160',
+                        'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
                     }
                 }
             ).then(function (response) {
@@ -136,6 +138,80 @@ export const coinDetailData = ({ coinId }) => {
         }
         try {
             await coinDetailRequest();
+        } catch (error) {
+            console.error(error);
+        }
+    }
+}
+
+
+/* --------------------------------------------------------------------------------
+                        Coin Exchanges From Repidapi
+-------------------------------------------------------------------------------- */
+export const ExchangeData = ({ coinId }) => {
+    return async (dispatch) => {
+        const ExchangeRequest = async () => {
+            axios.request(
+                {
+                    method: 'GET',
+                    url: `https://coinranking1.p.rapidapi.com/coin/${coinId}/exchanges`,
+                    params: {
+                        referenceCurrencyUuid: 'yhjMzLPhuIDl',
+                        limit: '50',
+                        offset: '0',
+                        orderBy: '24hVolume',
+                        orderDirection: 'desc'
+                    },
+                    headers: {
+                        'X-RapidAPI-Key': '646793bc93msh0a1f6f52bce9f9fp19c9b7jsn2262f92e3160',
+                        'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
+                    }
+                }
+            ).then(function (response) {
+                dispatch(ExchnageAction.setExchanges(response.data));
+            }).catch(function (error) {
+                console.error(error);
+            });
+        }
+        try {
+            await ExchangeRequest();
+        } catch (error) {
+            console.error(error);
+        }
+    }
+}
+
+
+/* --------------------------------------------------------------------------------
+                        Coin Markets From Repidapi
+-------------------------------------------------------------------------------- */
+export const MarketsData = ({ coinId }) => {
+    return async (dispatch) => {
+        const MarketsRequest = async () => {
+            axios.request(
+                {
+                    method: 'GET',
+                    url: `https://coinranking1.p.rapidapi.com/coin/${coinId}/markets`,
+                    params: {
+                        referenceCurrencyUuid: coinId,
+                        limit: '50',
+                        offset: '0',
+                        orderBy: '24hVolume',
+                        orderDirection: 'desc'
+                    },
+                    headers: {
+                        'X-RapidAPI-Key': '646793bc93msh0a1f6f52bce9f9fp19c9b7jsn2262f92e3160',
+                        'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
+                    }
+                }
+            ).then(function (response) {
+                dispatch(MarketsAction.setMarkets(response.data));
+            }).catch(function (error) {
+                console.error(error);
+            });
+        }
+        try {
+            await MarketsRequest();
         } catch (error) {
             console.error(error);
         }
