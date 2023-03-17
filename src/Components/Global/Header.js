@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { Container } from 'react-bootstrap';
 
 export const Header = () => {
   return (
-    <div>Header</div>
+    <Container fluid className='bg-cuprimary py-3 text-white text-center'>
+      Header
+    </Container>
   )
 }

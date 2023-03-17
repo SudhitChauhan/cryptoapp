@@ -7,10 +7,10 @@ import { FrontView } from "./FrontView";
 import { ErrorPage } from "../Pages/ErrorPage";
 import { AdminView } from "./AdminView";
 import { Profile } from "../Pages/Profile";
-import { News } from "../Pages/News";
-import { CryptoDetails } from "../Pages/CryptoDetails";
-import { Cryptocurrencies } from "../Pages/Cryptocurrencies";
-import { Exchanges } from "../Pages/Exchanges";
+import { News } from "../Pages/Crypto/News";
+import { CryptoDetails } from "../Pages/Crypto/CryptoDetails";
+import { Cryptocurrencies } from "../Pages/Crypto/Cryptocurrencies";
+import { CryptoHome } from "../Pages/Crypto/CryptoHome";
 
 const router = createBrowserRouter([
     {
@@ -25,12 +25,12 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path: "dashboard/",
+        path: "",
         element: <AdminView />,
         errorElement: <ErrorPage />,
         children: [
             {
-                path: "",
+                path: "dashboard",
                 element: <Dashboard />,
             },
             {
@@ -38,21 +38,28 @@ const router = createBrowserRouter([
                 element: <Profile />,
             },
             {
-                path: "exchanges",
-                element: <Exchanges />,
+                path: "crypto",
+                children: [
+                    {
+                        path: "Home",
+                        element: <CryptoHome />,
+                    },
+                    {
+                        path: "cryptocurrencies",
+                        element: <Cryptocurrencies />,
+                    },
+                    {
+                        path: ":coinId",
+                        element: <CryptoDetails />,
+                    },
+                    {
+                        path: "news",
+                        element: <News />,
+                    },
+                ]
             },
-            {
-                path: "cryptocurrencies",
-                element: <Cryptocurrencies />,
-            },
-            {
-                path: "crypto/:coinId",
-                element: <CryptoDetails />,
-            },
-            {
-                path: "news",
-                element: <News />,
-            },
+            
+           
         ]
     },
 ]);

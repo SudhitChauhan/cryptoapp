@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Sono:wght@400;600;800&display=swap');
 
-html, body, * {
+html,
+body,
+* {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -17,6 +19,7 @@ html, body, * {
   position: relative;
   overflow: hidden;
 }
+
 a {
   text-decoration: none;
 }
@@ -31,9 +34,11 @@ a {
   display: flex;
   flex-direction: column;
 }
+
 .sidebar.show {
   margin-left: 0px;
 }
+
 .side-links {
   flex-grow: 1;
   overflow: auto;
@@ -117,14 +122,15 @@ a {
   object-fit: cover;
   border: 2px solid #fff;
 }
+
 .head-comon-ic {
   height: 50px;
-    width: 50px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    font-size: 30px;
-    color: #ffffff;
+  width: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 30px;
+  color: #ffffff;
 }
 
 .iin {
@@ -146,6 +152,7 @@ a {
 .sidebar .crypto-card-1 {
   background: #73624d;
 }
+
 .crypto-card-1 .content {
   flex-grow: 1;
   overflow: auto;
@@ -156,7 +163,9 @@ a {
   display: flex;
 }
 
-.import-info, .side-links, .logo-con {
+.import-info,
+.side-links,
+.logo-con {
   padding: 20px;
 }
 
@@ -168,13 +177,13 @@ a {
 
 .badge.bg-success {
   background-color: #19875426 !important;
-    color: #12bb6d;
+  color: #12bb6d;
 }
 
 .logo-con h1 {
   font-weight: 800;
-    color: #ffffff;
-    text-align: center;
+  color: #ffffff;
+  text-align: center;
 }
 
 .logo-con h1 span {
@@ -188,17 +197,18 @@ a {
 
 .side-links .side-ul li a {
   display: block;
-  padding: 15px;
+  padding: 10px;
   display: flex;
   gap: 15px;
   color: #ffffff;
   font-size: 17px;
 }
+
 .side-links .side-ul li a:hover {
   color: #c99d66;
 }
 
-.side-links .side-ul li a > span {
+.side-links .side-ul li a>span {
   width: 20px;
   height: 20px;
 }
@@ -213,6 +223,7 @@ a {
   font-weight: 600;
   color: #7c7d7d;
 }
+
 .welcome-text small {
   font-weight: 100;
   font-size: 20px;
@@ -307,10 +318,12 @@ a {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
 .provider {
   align-items: center;
   gap: 10px;
 }
+
 .provider img {
   width: 40px;
   height: 40px;
@@ -318,9 +331,11 @@ a {
   border: 1px solid #d2d2d2;
   border-radius: 50%;
 }
+
 .provider h6 {
   font-weight: 600;
 }
+
 .provider .icon {
   font-size: 38px;
   color: #d7d7d7;
@@ -334,6 +349,7 @@ a {
   border-radius: 20px;
   padding: 15px;
 }
+
 .coin-card .icon img {
   width: 100px;
   height: 100px;
@@ -375,4 +391,34 @@ hr {
 
 .import-info .text-white {
   color: #a7a7a7 !important;
+}
+
+.sidebar .accordion-item,
+.sidebar .accordion-button:not(.collapsed),
+.sidebar .accordion-button {
+  background-color: transparent !important;
+  color: #ffffff;
+  box-shadow: none;
+  border: none;
+}
+
+.accordion-button::after, .accordion-button:not(.collapsed)::after {
+  background-image: url('../img/down-arrow.png');
+  background-size: 1rem;
+}
+
+.sidebar .accordion-body {
+  padding: 0 var(--bs-accordion-body-padding-x) 17px;
+}
+
+.sidebar .accordion-button {
+  padding: 10px !important;
+}
+
+.bg-cuprimary {
+  background-color: #c99d66;
+}
+
+.bg-cusecondary {
+  background-color: #3c3c3d;
 }

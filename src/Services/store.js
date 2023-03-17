@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import GlobalStateSlice from './Slices/GlobalState';
-import CoinsSlice from './Slices/Coins';
-import NewsSlice from './Slices/News';
-import CoinDetailsSlice from './Slices/CoinDetailSlice';
-import ExchangeSlice from './Slices/ExchangeSlice';
-import MarketsSlice from './Slices/MarketsSlice';
+import GlobalStateSlice from './Slices/Crypto/GlobalState';
+import CoinsSlice from './Slices/Crypto/Coins';
+import NewsSlice from './Slices/Crypto/News';
+import CoinDetailsSlice from './Slices/Crypto/CoinDetailSlice';
+import ExchangeSlice from './Slices/Crypto/ExchangeSlice';
+import MarketsSlice from './Slices/Crypto/MarketsSlice';
 
 const store = configureStore({
   reducer: {

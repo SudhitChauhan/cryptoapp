@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Sidebar } from '../Components/Global/Sidebar';
 import { AiOutlineAlignLeft } from "react-icons/ai";
-
-import { IoMdNotificationsOutline } from "react-icons/io";
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 export const AdminView = () => {
 
@@ -24,7 +22,9 @@ export const AdminView = () => {
               </div>
             </div> */}
             <div className='profile'>
-              <img src='https://picsum.photos/id/237/200/300' className='profile-img' />
+              <Link to="/profile">
+                <img src='https://picsum.photos/id/237/200/300' className='profile-img' />
+              </Link>
             </div>
           </div>
         </header>

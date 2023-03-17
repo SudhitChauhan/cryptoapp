@@ -1,10 +1,10 @@
 import axios from "axios"
-import { CoinsAction } from "../Slices/Coins";
-import { GlobalStateAction } from "../Slices/GlobalState";
-import { NewsAction } from "../Slices/News";
-import { CoinDetailsAction } from "../Slices/CoinDetailSlice";
-import { ExchnageAction } from "../Slices/ExchangeSlice";
-import { MarketsAction } from "../Slices/MarketsSlice";
+import { CoinsAction } from "../Slices/Crypto//Coins";
+import { GlobalStateAction } from "../Slices/Crypto//GlobalState";
+import { NewsAction } from "../Slices/Crypto//News";
+import { CoinDetailsAction } from "../Slices/Crypto/CoinDetailSlice";
+import { ExchnageAction } from "../Slices/Crypto//ExchangeSlice";
+import { MarketsAction } from "../Slices/Crypto//MarketsSlice";
 
 
 
@@ -38,7 +38,6 @@ export const globalStateData = () => {
         }
     }
 }
-
 
 
 /* --------------------------------------------------------------------------------
@@ -90,7 +89,6 @@ export const newsData = () => {
             axios.request(
                 {
                     method: 'GET',
-                    // url: 'https://bing-news-search1.p.rapidapi.com/news',
                     url: 'https://bing-news-search1.p.rapidapi.com/news/search?q="Cryptocurrency"',
                     params: { safeSearch: 'Off', textFormat: 'Raw' },
                     headers: {
